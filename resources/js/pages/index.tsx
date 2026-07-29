@@ -98,7 +98,7 @@ export default function Dashboard() {
   });
 
   return (
-    <AppLayout>
+    <AppLayout className="md:py-8 grid grid-cols-1 lg:grid-cols-4 gap-8 md:mt-[64px]">
 
       {/* SIDEBAR FILTER */}
       <aside className="hidden md:block bg-white p-5 rounded-xl border border-slate-200 h-fit space-y-4">

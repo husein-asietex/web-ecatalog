@@ -27,7 +27,7 @@ import { route } from "ziggy-js";
 
 export default function Navbar() {
     return (
-        <header className="hidden md:block sticky top-0 bg-white border-b z-50">
+        <header className="hidden md:block fixed w-full top-0 bg-white border-b z-50 px-20">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 <div className="flex items-center gap-8">
