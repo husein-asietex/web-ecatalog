@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { route } from 'ziggy-js';
 import { useForm } from '@inertiajs/react';
-import AppLayout from '@/Layouts/AppLayout';
+import DashboardLayout from '@/Layouts/DashboardLayout';
 
 export default function Dashboard() {
 
@@ -12,9 +12,9 @@ export default function Dashboard() {
     };
 
     return (
-        <AppLayout>
+        <DashboardLayout>
             <h1>Bisa dashboard</h1>
             <Button onClick={submit}>logout</Button>
-        </AppLayout>
+        </DashboardLayout>
     )
 }

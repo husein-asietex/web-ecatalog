@@ -38,41 +38,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
-const deliveryTimes = [
-  {
-    value: "asap",
-    id: "delivery-asap",
-    label: "Standard delivery",
-    description: "25–35 min · Driver assigned now",
-    badge: "Fastest",
-  },
-  {
-    value: "5-00",
-    id: "delivery-5-00",
-    label: "5:00 PM – 5:15 PM",
-    description: "Prep starts at 4:45 PM",
-  },
-  {
-    value: "5-30",
-    id: "delivery-5-30",
-    label: "5:30 PM – 5:45 PM",
-    description: "Good if you're heading home",
-  },
-  {
-    value: "6-00",
-    id: "delivery-6-00",
-    label: "6:00 PM – 6:15 PM",
-    description: "Most popular · High demand",
-  },
-  {
-    value: "6-30",
-    id: "delivery-6-30",
-    label: "6:30 PM – 6:45 PM",
-    description: "Last slot before kitchen closes",
-  },
-];
-
-export default function Dashboard() {
+export default function Dashboard({ products = [] }: { products?: any[] }) {
   const [openFilter, setOpenFilter] = useState<FilterState>({
     basic: true,
     oversize: false,
@@ -89,16 +55,16 @@ export default function Dashboard() {
     setOpenFilter((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const products = Array(8).fill({
+  /* const products = Array(8).fill({
     title: "Cotton Combed BCI 24S Supersoft",
     gsm: "180 GSM",
     composition: "100% Cotton",
     width: "180 / 72\"",
     price: "Rp 149.000",
-  });
+  }); */
 
   return (
-    <AppLayout className="md:py-8 grid grid-cols-1 lg:grid-cols-4 gap-8 md:mt-[64px]">
+    <AppLayout className="md:py-8 grid grid-cols-1 lg:grid-cols-4 gap-8 md:mt-[64px] md:mb-[200px]">
 
       {/* SIDEBAR FILTER */}
       <aside className="hidden md:block bg-white p-5 rounded-xl border border-slate-200 h-fit space-y-4">

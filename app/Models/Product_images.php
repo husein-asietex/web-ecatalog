@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 
 #[Fillable([
-    'name',
+    'product_id',
+    'image_path',
 ])]
-class Role extends Model
+class Product_images extends Model
 {
     use HasFactory, Notifiable;
 }

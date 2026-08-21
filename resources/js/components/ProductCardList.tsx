@@ -14,11 +14,9 @@ export default function ProductCardList({index, product}: any){
                 <div className="flex flex-col justify-between space-y-4 md:space-y-1 h-full">
                     
                     <div className="space-y-2">
-                        <h4 className="font-semibold text-sm md:text-base text-slate-900">{product.title}</h4>
+                        <h4 className="font-semibold text-sm md:text-base text-slate-900">{product.name}</h4>
                         <div className="flex flex-wrap gap-2 text-xs text-slate-500">
-                            <span className="bg-slate-100 px-2 py-0.5 rounded-full border">{product.gsm}</span>
-                            <span className="bg-slate-100 px-2 py-0.5 rounded-full border">{product.composition}</span>
-                            <span className="bg-slate-100 px-2 py-0.5 rounded-full border">{product.width}</span>
+                            <span className="bg-slate-100 px-2 py-0.5 rounded-full border">{product.material}</span>
                         </div>
                     </div>
 

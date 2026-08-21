@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import AppLayout from '@/Layouts/AppLayout';
+import AuthLayout from '@/Layouts/AuthLayout';
 
 export default function Login() {
   const { data, setData, post, processing, errors } = useForm({
@@ -17,7 +17,7 @@ export default function Login() {
   };
 
   return (
-    <AppLayout className="flex flex-col items-center justify-center">
+    <AuthLayout>
       <Card className="w-full md:w-sm">
         <CardHeader>
           <CardTitle>Login</CardTitle>
@@ -52,6 +52,6 @@ export default function Login() {
           </form>
         </CardContent>
       </Card>
-    </AppLayout>
+    </AuthLayout>
   );
 }

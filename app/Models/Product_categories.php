@@ -8,9 +8,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 
 #[Fillable([
+    'category_id',
+    'sku',
     'name',
+    'slug',
+    'description',
+    'material',
+    'is_active',
+    'created_by',
 ])]
-class Role extends Model
+class Product_categories extends Model
 {
     use HasFactory, Notifiable;
 }
