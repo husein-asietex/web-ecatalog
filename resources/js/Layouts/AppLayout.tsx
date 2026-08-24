@@ -14,7 +14,6 @@ export default function AppLayout({ children, className }: any) {
             <BottomNav />
 
             {/* MAIN CONTENT */}
-            {/* <div className="max-w-7xl mx-auto px-6 py-0 md:py-8 grid grid-cols-1 lg:grid-cols-4 gap-8"></div> */}
             <div
                 className={cn(
                     "max-w-7xl mx-auto px-6 md:px-20 w-full min-h-screen",

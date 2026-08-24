@@ -10,7 +10,7 @@ use Inertia\Inertia;
 
 class AuthenticatedSessionController extends Controller
 {
-    public function show()
+    public function index()
     {
         return Inertia::render('Auth/Login');
     }
@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/admin');
     }
 
     public function destroy(Request $request)

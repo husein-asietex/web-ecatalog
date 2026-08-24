@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "@inertiajs/react"
+import {Link, usePage} from "@inertiajs/react"
 import {
     Search,
     ShoppingCart,
@@ -21,11 +21,13 @@ type FilterState = {
     ladies: boolean;
 };
 
-import { Button } from "@/components/ui/button";
-import { route } from "ziggy-js";
+import { Button } from "@/components/ui/button"
+import { route } from "ziggy-js"
 
 
 export default function Navbar() {
+    const { auth } = usePage().props as any;
+
     return (
         <header className="hidden md:block fixed w-full top-0 bg-white border-b z-50 px-20">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -33,7 +35,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-8">
                     <Link href={route('main')}>
                         <Button className="flex items-center gap-2 font-semibold text-xl" variant={'ghost'}>
-                            <img src="/favicon-192x192.png" className="mb-1.5 w-6 h-6 md:w-8 md:h-8 object-contain rounded-lg" /> Asietex
+                            <img src="/favicon-192x192.png" className="w-6 h-6 md:w-8 md:h-8 object-contain rounded-lg" /> Asietex
                         </Button>
                     </Link>
                 </div>
@@ -44,6 +46,24 @@ export default function Navbar() {
                     <a href="#" className=""><Button className="hover:font-semibold" variant={'ghost'}>Blog</Button></a>
                     <a href="#" className=""><Button className="hover:font-semibold" variant={'ghost'}>About</Button></a>
                     <a href="#" className=""><Button className="hover:font-semibold" variant={'ghost'}>FAQ</Button></a>
+                    {auth.user 
+                    ? (
+                        <>
+                            <Link href={route('adminDashboard')} as="button">
+                                <Button className="hover:font-semibold" variant={'ghost'}>Dashboard</Button>
+                            </Link>
+                            <Link href={route('logout')} method="post" as="button">
+                                <Button className="hover:font-semibold text-red-500" variant={'ghost'}>Logout</Button>
+                            </Link>
+                        </>
+                    ):(
+                        <>
+                            <Link href={route('login')} as="button">
+                                <Button className="hover:font-semibold text-blue-500" variant={'ghost'}>Login</Button>
+                            </Link>
+                        </> 
+                    )
+                }
                 </nav>
 
                 <div className="flex items-center text-slate-600">
